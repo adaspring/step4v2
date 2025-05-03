@@ -1,0 +1,4 @@
+// before_body.json
+[
+  "<script>console.log('Custom script for body');</script>"
+]
