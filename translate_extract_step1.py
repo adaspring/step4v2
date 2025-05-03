@@ -7,20 +7,29 @@ from bs4 import BeautifulSoup, Comment
 TRANSLATABLE_TAGS = {
     "p", "span", "div", "h1", "h2", "h3", "h4", "h5", "h6",
     "label", "button", "li", "td", "th", "a", "strong", "em",
-    "b", "i", "caption", "summary", "figcaption", "option", "optgroup"
+    "b", "i", "caption", "summary", "figcaption", "option", "optgroup",
+    "legend", "mark", "output", "details", "time"
 }
 
 # Attributes that contain translatable UI text
 TRANSLATABLE_ATTRS = {
-    "alt", "title", "placeholder", "aria-label", "aria-placeholder", "value"
+    "alt", "title", "placeholder", "aria-label", "aria-placeholder",
+    "aria-valuetext", "aria-roledescription", "value",
+
+    # Common translatable data-* patterns
+    "data-i18n", "data-caption", "data-title", "data-tooltip",
+    "data-label", "data-error"
 }
 
 # SEO-related meta tags to translate (name or property)
 SEO_META_FIELDS = {
-    "name": {"description", "keywords"},
+    "name": {
+        "description", "keywords", "robots", "author",
+        "viewport", "theme-color"
+    },
     "property": {
-        "og:title", "og:description",
-        "twitter:title", "twitter:description"
+        "og:title", "og:description", "og:image", "og:url",
+        "twitter:title", "twitter:description", "twitter:image", "twitter:card"
     }
 }
 
