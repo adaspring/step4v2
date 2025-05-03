@@ -47,6 +47,11 @@ def inject_code(html_file):
                     name, ext = os.path.splitext(base)
                     tag[attr] = f"{name}-fr{ext}#{fragment}"
 
+               # Change lang="en" to lang="fr" in <html> tag
+    if soup.html and soup.html.has_attr("lang"):
+        soup.html["lang"] = "fr"
+
+    
     # Save with originalname-fr.html
     base_name = os.path.splitext(os.path.basename(html_file))[0]
     if base_name.startswith("translated_output"):
